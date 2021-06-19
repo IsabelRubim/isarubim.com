@@ -5,7 +5,6 @@ import Date from '../../components/date';
 
 import { getAllPostsIds, getPostData } from '../../lib/posts';
 
-
 export async function getStaticPaths() {
   const paths = getAllPostsIds();
   return {
