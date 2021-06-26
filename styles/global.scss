@@ -1,0 +1,58 @@
+:root {
+  --color-pink-light: #f4dff8;
+  --color-pink-light-1: #efd0f5; 
+  --color-primary: #D1C4E9;
+  --color-primary-dark: #440A67;
+  --color-black: #0A1931;
+
+  --color-purple: #AA2EE6;
+  --color-turquoise: #3EDBF0;
+  --color-green-water: #00EAD3;
+  --color-yellow: #FFC107;
+
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, .3);
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, .06);
+}
+
+$bp-largest: 75em;     // 1200px
+$bp-large: 68.75em;    // 1100px
+$bp-medium: 56.25em;   // 900px
+$bp-small: 37.5em;     // 600px
+$bp-smallest: 31.25em; // 500px
+
+[data-theme='dark'] {
+  --background: #282c35;
+  --foreground: #fbfbfb;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  line-height: 1.6;
+  font-size: 1rem;
+
+  @media only screen and (max-width: $bp-large) {
+    font-size: .9rem;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
