@@ -6,7 +6,7 @@ import styles from './style.module.scss';
 import utilStyles from '../../styles/utils.module.scss';
 import ThemeChanger from '../themeChanger';
 
-const name = 'Ei, eu sou Isabel Rubim 🍯';
+const name = 'Ei, eu sou Isabel Rubim.';
 export const siteTitle = 'Isabel Rubim';
 
 export default function Layout({ children, home }) {
