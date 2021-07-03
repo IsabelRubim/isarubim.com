@@ -5,29 +5,21 @@ import Link from 'next/link';
 import styles from './style.module.scss';
 import utilStyles from '../../styles/utils.module.scss';
 import ThemeChanger from '../themeChanger';
+import Meta from '../meta';
 
 const name = 'Ei, eu sou Isabel Rubim.';
+const description = 'Sou Engenheira de Software, tentando ser escritora e entusiasta da tecnologia. Tenho uma grande paixão por criar coisas que envolvam as pessoas e possam impactá-las de uma forma positiva.'
 export const siteTitle = 'Isabel Rubim';
 
 export default function Layout({ children, home }) {
   return (
     <div className={styles.container}>
       <ThemeChanger />
-      <Head>
-        <link rel="icon" href="/bee.png" />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
-        <meta 
-          property="og:image"
-          content={`https://og-image.vercel.app/${encodeURI(
-            siteTitle
-          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-        />
-        <meta name="og:title" content={siteTitle} />
-        <meta name="twitter:card" content="sumary_large_image" />
-      </Head>
+      <Meta 
+        title={siteTitle}
+        description={description}
+        canonical='https://isarubim.com' 
+      />
       <header className={styles.header}>
         {home ? (
           <>
@@ -69,7 +61,7 @@ export default function Layout({ children, home }) {
       {!home && (
         <div className={styles.backToHome}>
           <Link href="/">
-            <a>← Back to home</a>
+            <a>← Voltar</a>
           </Link>
         </div>
       )}

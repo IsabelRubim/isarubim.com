@@ -1,7 +1,9 @@
+import Head from 'next/head';
+
 import utilStyles from '../../styles/utils.module.scss';
-import Head from 'next/head'
 import Layout from '../../components/layout';
 import Date from '../../components/date';
+import Meta from '../../components/meta';
 
 import { getAllPostsIds, getPostData } from '../../lib/posts';
 
@@ -25,6 +27,11 @@ export async function getStaticProps({ params }) {
 export default function Post({ postData }) {
   return (
     <Layout>
+      <Meta 
+        title={postData.title}
+        description='teste'
+        canonical={`https://isarubim.com/posts/${postData.id}`}
+      />
       <Head>
         <title>{postData.title}</title>
       </Head>
