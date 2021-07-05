@@ -5,6 +5,7 @@ import utilStyles from '../styles/utils.module.scss';
 import Date from '../components/date';
 import RandomColor from '../components/randomColor';
 
+import * as gtag from '../lib/gtag';
 import { getSortedPostsData } from '../lib/posts';
 
 export async function getStaticProps() {
@@ -35,6 +36,15 @@ export default function Home({ allPostsData }) {
     }
   ];
 
+  const goToSocial = ({ label, link }) => {
+    gtag.event({
+      action: 'go_to_social',
+      category: 'social media',
+      label,
+      value: link
+    });
+  };
+
   return (
     <Layout home>
       <Head>
@@ -42,7 +52,7 @@ export default function Home({ allPostsData }) {
       </Head>
       <section className={`${utilStyles.headingMd} ${utilStyles.social}`} >
         {socials.map(({ id, label, link }) => (
-          <RandomColor key={id} label={label} linkExternal={true} link={link} />
+          <RandomColor key={id} label={label} linkExternal={true} link={link} onClick={() => goToSocial({ label, link })}/>
         ))}  
       </section>    
            

@@ -7,12 +7,13 @@ const getRandomColor = () => {
   return colors[Math.floor(Math.random() * colors.length)];
 };
 
-const RandomColor = ({ label, linkExternal, link }) => {
+const RandomColor = ({ label, linkExternal, link, onClick }) => {
   return (
     <>
       {
         linkExternal ? (
-          <a 
+          <a
+            onClick={onClick} 
             target='_blank' 
             href={link}
             className={utilStyles[getRandomColor()]}
