@@ -13,3 +13,26 @@
 .backToHome {
   margin: 3rem 0 0;
 }
+
+.creator {
+  position: absolute;
+  bottom: .8rem;
+  left: 0;
+  width: 100%;
+  text-align: center;
+
+  span {
+    display: inline-block;
+    margin: 0 .2rem;
+    animation: love infinite 2s ease-out;
+  }
+}
+
+@keyframes love {
+  to {
+    transform: scale(1);
+  }
+  from {
+    transform: scale(1.2);
+  }
+}

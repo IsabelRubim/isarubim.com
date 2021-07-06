@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -65,6 +64,11 @@ export default function Layout({ children, home }) {
           </Link>
         </div>
       )}
+      {home ?
+        (<footer className={styles.creator}>
+          Feito com <span>💜</span> Isabel Rubim.
+        </footer>)
+      : null}
     </div>
   )
 }
