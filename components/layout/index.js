@@ -55,20 +55,23 @@ export default function Layout({ children, home }) {
             </h2>
           </>
         )}
-      </header>    
-      <main>{children}</main>
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">
-            <a>← Voltar</a>
-          </Link>
-        </div>
-      )}
-      {home ?
-        (<footer className={styles.creator}>
+      </header>  
+      <section className={styles.wrapper}>
+        <main>{children}</main>
+
+        {!home && (
+          <div className={styles.backToHome}>
+            <Link href="/">
+              <a>← Voltar</a>
+            </Link>
+          </div>
+        )}
+      
+        <footer className={styles.creator}>
           Feito com <span>💜</span> Isabel Rubim.
-        </footer>)
-      : null}
+        </footer>
+      </section>
+      
     </div>
   )
 }
