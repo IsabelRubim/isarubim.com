@@ -1,7 +1,7 @@
 .container {
   max-width: 36rem;
   padding: 0 1rem;
-  margin: 3rem auto 6rem;
+  margin: 3rem auto 0;
 }
 
 .header {
@@ -14,11 +14,15 @@
   margin: 3rem 0 0;
 }
 
+.wrapper {
+  display: flex;
+  min-height: 68vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .creator {
-  position: absolute;
-  bottom: .8rem;
-  left: 0;
-  width: 100%;
+  margin: 2rem 0 1rem;
   text-align: center;
 
   span {
