@@ -1,28 +1,29 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 
-import styles from './style.module.scss';
-import utilStyles from '../../styles/utils.module.scss';
-import ThemeChanger from '../themeChanger';
-import Meta from '../meta';
+import styles from "./style.module.scss";
+import utilStyles from "../../styles/utils.module.scss";
+import ThemeChanger from "../themeChanger";
+import Meta from "../meta";
 
-const name = 'Ei, eu sou Isabel Rubim.';
-const description = 'Sou Engenheira de Software, tentando ser escritora e entusiasta da tecnologia. Tenho uma grande paixão por criar coisas que envolvam as pessoas e possam impactá-las de uma forma positiva.'
-export const siteTitle = 'Isabel Rubim';
+const name = "Ei, eu sou Isabel Rubim.";
+const description =
+  "Sou Engenheira de Software, tentando ser escritora e entusiasta da tecnologia. Tenho uma grande paixão por criar coisas que envolvam as pessoas e possam impactá-las de uma forma positiva.";
+export const siteTitle = "Isabel Rubim";
 
 export default function Layout({ children, home }) {
   return (
     <div className={styles.container}>
       <ThemeChanger />
-      <Meta 
+      <Meta
         title={siteTitle}
         description={description}
-        canonical='https://isarubim.com' 
+        canonical="https://isarubim.com"
       />
       <header className={styles.header}>
         {home ? (
           <>
-            <Image 
+            <Image
               priority
               src="/images/profile.jpg"
               className={utilStyles.borderCircle}
@@ -30,13 +31,13 @@ export default function Layout({ children, home }) {
               width={144}
               alt={name}
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+              <h1 className={utilStyles.heading2Xl}>{name}</h1>
           </>
         ) : (
           <>
             <Link href="/">
               <a>
-                <Image 
+                <Image
                   priority
                   src="/images/profile.jpg"
                   className={utilStyles.borderCircle}
@@ -48,14 +49,12 @@ export default function Layout({ children, home }) {
             </Link>
             <h2 className={utilStyles.headingLg}>
               <Link href="/">
-                <a className={utilStyles.colorInherit}>
-                  {name}
-                </a>
+                <a className={utilStyles.colorInherit}>{name}</a>
               </Link>
             </h2>
           </>
         )}
-      </header>  
+      </header>
       <section className={styles.wrapper}>
         <main>{children}</main>
 
@@ -66,12 +65,10 @@ export default function Layout({ children, home }) {
             </Link>
           </div>
         )}
-      
         <footer className={styles.creator}>
           Feito com <span>💜</span> Isabel Rubim.
         </footer>
       </section>
-      
     </div>
-  )
+  );
 }

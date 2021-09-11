@@ -1,0 +1,5 @@
+{
+	experimental: {
+		esmExternals: "loose"
+	}
+}

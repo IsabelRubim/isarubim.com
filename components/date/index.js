@@ -1,11 +1,14 @@
-import { parseISO, format } from 'date-fns';
-import { ptBR } from 'date-fns/locale';
+import { parseISO, format } from "date-fns";
+import { ptBR } from "date-fns/locale";
+
+import styles from './style.module.scss';
 
 export default function Date({ dateString }) {
-  const date = parseISO(dateString);
+  const time = dateString?.slice(0, -1);
+  const date = parseISO(time);
   return (
-    <time dateTime={dateString}>
-      {format(date, 'LLL dd, yyyy', { locale: ptBR })}
+    <time className={styles.date} dateTime={dateString}>
+      {format(date, "LLL dd, yyyy", { locale: ptBR })}
     </time>
   );
 }

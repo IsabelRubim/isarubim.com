@@ -1,20 +1,29 @@
 :root {
   --color-pink-light: #f4dff8;
-  --color-pink-light-1: #efd0f5; 
-  --color-primary: #D1C4E9;
-  --color-primary-dark: #440A67;
-  --color-black: #0A1931;
+  --color-pink-light-1: #efd0f5;
+  --color-primary: #d1c4e9;
+  --color-primary-dark: #440a67;
+  --color-black: #0a1931;
 
-  --color-purple: #AA2EE6;
-  --color-turquoise: #3EDBF0;
-  --color-green-water: #00EAD3;
-  --color-yellow: #FFC107;
+  --color-purple: #aa2ee6;
+  --color-turquoise: #3edbf0;
+  --color-green-water: #00ead3;
+  --color-yellow: #ffc107;
 
-  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, .3);
-  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, .06);
+  --heading-font-color: var(--color-purple);
+
+  --font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    "Roboto", Roboto, Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    "Roboto", Roboto, Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   --background: #282c35;
   --foreground: #fff;
 }
@@ -35,8 +44,7 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
-    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
   line-height: 1.6;
   font-size: 1rem;

@@ -1,0 +1,52 @@
+.markdown {
+  p {
+    font-size: 1.05rem;
+    margin: 0 0 1.5rem;
+  }
+
+  a {
+    border-bottom: 2px solid var(--color-purple);
+    font-weight: 600;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: var(--heading-font-color);
+    font-family: var(--heading-font-family);
+    line-height: 1.2;
+    margin: 1.5rem 0;
+    scroll-margin-top: 60px;
+  }
+
+  pre {
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    overflow-x: auto;
+    overflow-y: initial;
+  }
+
+  blockquote,
+  ol,
+  table,
+  ul {
+    font-size: 1.05rem;
+    margin: 0 0 1.5rem;
+    padding: 0 2rem;
+  }
+
+  li {
+    &::marker {
+      color: var(--color-purple);
+    }
+  }
+
+  img {
+    border-radius: 5px;
+    box-shadow: var(--shadow-light);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
