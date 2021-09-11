@@ -1,7 +1,10 @@
 {
-  "name": "learn-starter",
-  "version": "0.1.0",
+  "name": "isarubim.com",
   "private": true,
+  "version": "0.1.0",
+  "description": "Isabel Rubim's personal website.",
+  "author": "Isabel Rubim",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
