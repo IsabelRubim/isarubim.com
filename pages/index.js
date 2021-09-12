@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import Layout, { siteTitle } from "../components/layout";
+import Layout from "../components/layout";
 import Date from "../components/date";
 import RandomColor from "../components/randomColor";
 
@@ -8,7 +8,7 @@ import * as gtag from "../lib/gtag";
 import { gqlClient } from "../lib/graphql-client";
 import { GET_ALL_POSTS } from "../graphql/queries";
 
-import { SOCIALS } from "../utils";
+import { SOCIALS, siteTitle } from "../utils";
 import utilStyles from "../styles/utils.module.scss";
 
 export default function Home({ posts }) {

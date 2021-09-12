@@ -5,11 +5,7 @@ import styles from "./style.module.scss";
 import utilStyles from "../../styles/utils.module.scss";
 import ThemeChanger from "../themeChanger";
 import Meta from "../meta";
-
-const name = "Ei, eu sou Isabel Rubim.";
-const description =
-  "Sou Engenheira de Software, tentando ser escritora e entusiasta da tecnologia. Tenho uma grande paixão por criar coisas que envolvam as pessoas e possam impactá-las de uma forma positiva.";
-export const siteTitle = "Isabel Rubim";
+import { name, description, siteTitle } from "../../utils";
 
 export default function Layout({ children, home }) {
   return (
@@ -66,7 +62,7 @@ export default function Layout({ children, home }) {
           </div>
         )}
         <footer className={styles.creator}>
-          Feito com <span>💜</span> Isabel Rubim.
+          Feito com <span>💜</span> {siteTitle}.
         </footer>
       </section>
     </div>
