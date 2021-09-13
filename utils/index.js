@@ -24,6 +24,6 @@ export const SOCIALS = [
   {
     id: 4,
     label: "Compre me um café",
-    link: "https://www.buymeacoffee.com/isabelrubim",
+    link: "https://ko-fi.com/isabelrubim",
   },
 ];
