@@ -1,7 +1,7 @@
 export const name = "Ei, eu sou Isabel Rubim.";
 
 export const description =
-  "Sou Engenheira de Software, tentando ser escritora e entusiasta da tecnologia. Tenho uma grande paixão por criar coisas que envolvam as pessoas e possam impactá-las de uma forma positiva.";
+  "Sou Engenheira de Software, tentando ser escritora e entusiasta da tecnologia. Tenho uma grande paixão por criar coisas que envolve as pessoas e possam impactá-las de uma forma positiva.";
 
 export const siteTitle = "Isabel Rubim";
 

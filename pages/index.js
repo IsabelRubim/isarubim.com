@@ -8,7 +8,7 @@ import * as gtag from "../lib/gtag";
 import { gqlClient } from "../lib/graphql-client";
 import { GET_ALL_POSTS } from "../graphql/queries";
 
-import { SOCIALS, siteTitle } from "../utils";
+import { SOCIALS, siteTitle, description } from "../utils";
 import utilStyles from "../styles/utils.module.scss";
 
 export default function Home({ posts }) {
@@ -40,9 +40,7 @@ export default function Home({ posts }) {
 
       <section className={utilStyles.headingMd}>
         <p>
-          Sou Engenheira de Software, tentando ser escritora e entusiasta da
-          tecnologia. Tenho uma grande paixão por criar coisas que envolvam as
-          pessoas e possam impactá-las de uma forma positiva.
+          {description}
         </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
