@@ -17,6 +17,7 @@ export const GET_POST = gql`
       id
       slug
       title
+      description
       content
       publishedAt
     }

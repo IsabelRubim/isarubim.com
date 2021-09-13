@@ -11,14 +11,14 @@ import Markdown from "../../components/markdown";
 import BuyMeACoffee from "../../components/buyMeACoffee";
 
 export default function Post({ post }) {
-  const { title, content, publishedAt, id } = post;
+  const { title, description, content, publishedAt, slug } = post;
 
   return (
     <Layout>
       <Meta
         title={title}
-        description="teste"
-        canonical={`https://isarubim.com/posts/${id}`}
+        description={description}
+        canonical={`https://isarubim.com/posts/${slug}`}
       />
       <Head>
         <title>{title}</title>
