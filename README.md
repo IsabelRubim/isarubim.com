@@ -4,8 +4,6 @@
 
 Isabel's personal website running on Next.js, React, and Strapi.
 
-[![Patreon donate button](https://img.shields.io/endpoint.svg?url=https://shieldsio-patreon.vercel.app/api?username=isabelrubim&type=patrons&style=for-the-badge)](https://patreon.com/isabelrubim "Support me on Patreon")
-
 <a href="https://www.buymeacoffee.com/isabelrubim" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-green.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 ## License
 
