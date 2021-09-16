@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-
-import * as gtag from '../lib/gtag';
 import { ThemeProvider } from 'next-themes';
 
+import Analytics from '../components/analytics';
+
+import * as gtag from '../lib/gtag';
 import '../styles/global.scss';
 
 export default function App({ Component, pageProps }) {
@@ -24,6 +25,7 @@ export default function App({ Component, pageProps }) {
   return (
     <ThemeProvider>
       <Component {...pageProps } />
+      <Analytics />
     </ThemeProvider>
   );
 }
