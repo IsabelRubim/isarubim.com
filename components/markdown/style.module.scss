@@ -43,6 +43,40 @@
     }
   }
 
+  blockquote {
+    position: relative;
+    width: 35em;
+    margin: 0;
+    padding-left: 4em;
+
+    p {
+      font-style: italic;
+
+      &:first-of-type {
+        color: #666;
+      }
+
+      &:last-of-type {
+        font-size: 0.9rem;
+        font-weight: 300;
+        line-height: 1;
+        vertical-align: middle;
+        color: #818181;
+      }
+    }    
+
+    &::before {
+      content: "“";
+      position: absolute;
+      top: 0;
+      left: 0.325em;
+      font-size: 4em;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--color-purple);
+    }
+  }
+
   img {
     border-radius: 5px;
     box-shadow: var(--shadow-light);
