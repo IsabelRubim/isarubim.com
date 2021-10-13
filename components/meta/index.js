@@ -21,14 +21,17 @@ const Meta = ({ title, description, canonical, image }) => (
     <link rel="icon" type="image/png" href="/bee.png" />
     <link rel="apple-touch-icon" href="/bee.png" />
     {image ? (
-      <meta property="og:image" content={image} />
+      <>
+        <meta property="og:image" content={image} />
+        <meta property="og:image:secure_url" content={image} />
+        <meta name="twitter:image:src" content={image} />
+      </>
     ) : (
-      <meta property="og:image" content="/images/profile.jpg" />
-    )}
-    {image ? (
-      <meta name="twitter:image" content={image} />
-    ) : (
-      <meta name="twitter:image" content="/images/profile.jpg" />
+      <>
+        <meta property="og:image" content="/images/profile.jpg" />
+        <meta property="og:image:secure_url" content="/images/profile.jpg" />
+        <meta name="twitter:image:src" content="/images/profile.jpg" />
+      </>
     )}
     {canonical && <link rel="canonical" href={canonical} />}
   </Head>
