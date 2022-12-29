@@ -11,12 +11,12 @@
     "start": "next start"
   },
   "dependencies": {
-    "@apollo/client": "^3.4.10",
+    "@notionhq/client": "^2.2.3",
     "date-fns": "^2.22.1",
-    "graphql": "^15.5.3",
     "gray-matter": "^4.0.3",
     "next": "^11.1.0",
     "next-themes": "0.0.14",
+    "notion-to-md": "^2.5.5",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-markdown": "^7.0.1",

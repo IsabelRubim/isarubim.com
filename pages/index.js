@@ -1,21 +1,21 @@
-import Head from "next/head";
+import Head from 'next/head';
 
-import Layout from "../components/layout";
-import Date from "../components/date";
-import RandomColor from "../components/randomColor";
+import Layout from '../components/layout';
+import Date from '../components/date';
+import RandomColor from '../components/randomColor';
 
-import * as gtag from "../lib/gtag";
-import { gqlClient } from "../lib/graphql-client";
-import { GET_ALL_POSTS } from "../graphql/queries";
+import * as gtag from '../lib/gtag';
+import { getAllPublished } from '../lib/notion';
 
-import { SOCIALS, siteTitle, description } from "../utils";
-import utilStyles from "../styles/utils.module.scss";
+import { SOCIALS, siteTitle, description } from '../utils';
+
+import utilStyles from '../styles/utils.module.scss';
 
 export default function Home({ posts }) {
   const goToSocial = ({ label, link }) => {
     gtag.event({
-      action: "go_to_social",
-      category: "social media",
+      action: 'go_to_social',
+      category: 'social media',
       label,
       value: link,
     });
@@ -39,9 +39,7 @@ export default function Home({ posts }) {
       </section>
 
       <section className={utilStyles.headingMd}>
-        <p>
-          {description}
-        </p>
+        <p>{description}</p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>📝 Blog</h2>
@@ -69,12 +67,12 @@ export default function Home({ posts }) {
 }
 
 export const getStaticProps = async () => {
-  const { data } = await gqlClient.query({ query: GET_ALL_POSTS });
-  const posts = data.blogs;
+  const data = await getAllPublished();
 
   return {
     props: {
-      posts,
+      posts: data,
     },
+    revalidate: 60,
   };
 };

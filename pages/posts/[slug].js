@@ -1,14 +1,14 @@
-import Head from "next/head";
+import Head from 'next/head';
 
-import { gqlClient } from "../../lib/graphql-client";
-import { GET_ALL_POSTS, GET_POST } from "../../graphql/queries";
+import { getSinglePost, getAllPublished } from '../../lib/notion';
 
-import utilStyles from "../../styles/utils.module.scss";
-import Layout from "../../components/layout";
-import Date from "../../components/date";
-import Meta from "../../components/meta";
-import Markdown from "../../components/markdown";
-import BuyMeACoffee from "../../components/buyMeACoffee";
+import Layout from '../../components/layout';
+import Date from '../../components/date';
+import Meta from '../../components/meta';
+import Markdown from '../../components/markdown';
+import BuyMeACoffee from '../../components/buyMeACoffee';
+
+import utilStyles from '../../styles/utils.module.scss';
 
 export default function Post({ post }) {
   const { title, description, content, publishedAt, slug, image } = post;
@@ -37,27 +37,22 @@ export default function Post({ post }) {
 }
 
 export const getStaticProps = async ({ params }) => {
-  const { data } = await gqlClient.query({
-    query: GET_POST,
-    variables: {
-      where: {
-        slug: params?.slug || "",
-      },
-    },
-  });
+  const post = await getSinglePost(params?.slug);
 
   return {
-    props: { post: data.blogs[0] },
+    props: {
+      post,
+    },
+    revalidate: 60,
   };
 };
 
 export const getStaticPaths = async () => {
-  const { data } = await gqlClient.query({ query: GET_ALL_POSTS });
-  const posts = data.blogs;
+  const posts = await getAllPublished();
+  const paths = posts.map(({ slug }) => ({ params: { slug } }));
 
-  const paths = posts.map((post) => ({
-    params: { slug: post.slug },
-  }));
-
-  return { paths, fallback: false };
+  return {
+    paths,
+    fallback: 'blocking',
+  };
 };
