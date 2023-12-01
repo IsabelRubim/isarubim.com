@@ -1,7 +1,7 @@
 import { parseISO, format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 
-import styles from './style.module.scss';
+import styles from "./style.module.scss";
 
 export default function Date({ dateString }) {
   const time = dateString?.slice(0, -1);

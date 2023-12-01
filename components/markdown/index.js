@@ -14,7 +14,7 @@ const renderers = {
         PreTag="div"
         {...props}
       >
-        {String(children).replace(/\n$/, '')}
+        {String(children).replace(/\n$/, "")}
       </SyntaxHighlighter>
     ) : (
       <code className={className} {...props}>
@@ -27,7 +27,7 @@ const renderers = {
 export default function Markdown({ content }) {
   return (
     <div className={styles.markdown}>
-      <ReactMarkdown components={renderers} children={content} />
+      <ReactMarkdown components={renderers} children={content?.parent} />
     </div>
   );
 }
