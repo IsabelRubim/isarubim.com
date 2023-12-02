@@ -4,7 +4,7 @@ import { appendComments } from "../../lib/comments";
 
 import styles from "./style.module.scss";
 
-export const Comments = () => {
+const Comments = () => {
   useEffect(() => {
     appendComments();
   }, []);
@@ -16,3 +16,5 @@ export const Comments = () => {
     </>
   );
 };
+
+export default Comments;

@@ -6,7 +6,7 @@ import Layout from "../../components/layout";
 import Date from "../../components/date";
 import Meta from "../../components/meta";
 import Markdown from "../../components/markdown";
-import { Comments } from "../../components/comments";
+import Comments from "../../components/comments";
 
 import utilStyles from "../../styles/utils.module.scss";
 
