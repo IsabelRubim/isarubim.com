@@ -1,8 +1,10 @@
+import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import dracula from "react-syntax-highlighter/dist/cjs/styles/prism/dracula";
 
 import styles from "./style.module.scss";
+import BuyMeACoffee from "../buyMeACoffee";
 
 const renderers = {
   code: ({ node, inline, className, children, ...props }) => {
@@ -26,8 +28,16 @@ const renderers = {
 
 export default function Markdown({ content }) {
   return (
-    <div className={styles.markdown}>
-      <ReactMarkdown components={renderers} children={content?.parent} />
-    </div>
+    <>
+      <div className={styles.markdown}>
+        <ReactMarkdown components={renderers} children={content?.parent} />
+      </div>
+
+      <BuyMeACoffee />
+
+      <div className={styles.backToHome}>
+        <Link href="/">← Voltar</Link>
+      </div>
+    </>
   );
 }

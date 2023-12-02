@@ -6,7 +6,7 @@ import Layout from "../../components/layout";
 import Date from "../../components/date";
 import Meta from "../../components/meta";
 import Markdown from "../../components/markdown";
-import BuyMeACoffee from "../../components/buyMeACoffee";
+import { Comments } from "../../components/comments";
 
 import utilStyles from "../../styles/utils.module.scss";
 
@@ -30,8 +30,8 @@ export default function Post({ post }) {
           <Date dateString={publishedAt} />
         </div>
         <Markdown content={content} />
-        <BuyMeACoffee />
       </article>
+      <Comments />
     </Layout>
   );
 }

@@ -51,12 +51,6 @@ export default function Layout({ children, home }) {
       </header>
       <section className={styles.wrapper}>
         <main>{children}</main>
-
-        {!home && (
-          <div className={styles.backToHome}>
-            <Link href="/">← Voltar</Link>
-          </div>
-        )}
         <footer className={styles.creator}>
           Feito com <span>💜</span> {siteTitle}.
         </footer>
