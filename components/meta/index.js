@@ -13,7 +13,8 @@ const Meta = ({ title, description, canonical, image }) => (
     />
     <meta property="og:site_name" content="Isabel Rubim" />
     <meta property="og:url" content={canonical} />
-    <meta name="twitter:card" content="summary" />
+    <meta name="author" content="Isabel Rubim" />
+    <meta property="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:site" content="@belrubim" />
@@ -25,14 +26,12 @@ const Meta = ({ title, description, canonical, image }) => (
         <meta property="og:image" content={image} />
         <meta property="og:image:secure_url" content={image} />
         <meta property="twitter:image" content={image} />
-        <meta property="twitter:card" content="summary_large_image" />
       </>
     ) : (
       <>
         <meta property="og:image" content="/images/profile.jpg" />
         <meta property="og:image:secure_url" content="/images/profile.jpg" />
         <meta name="twitter:image" content="/images/profile.jpg" />
-        <meta property="twitter:card" content="summary_large_image" />
       </>
     )}
     {canonical && <link rel="canonical" href={canonical} />}

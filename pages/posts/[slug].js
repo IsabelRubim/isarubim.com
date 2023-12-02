@@ -1,14 +1,14 @@
-import Head from 'next/head';
+import Head from "next/head";
 
-import { getSinglePost, getAllPublished } from '../../lib/notion';
+import { getSinglePost, getAllPublished } from "../../lib/notion";
 
-import Layout from '../../components/layout';
-import Date from '../../components/date';
-import Meta from '../../components/meta';
-import Markdown from '../../components/markdown';
-import BuyMeACoffee from '../../components/buyMeACoffee';
+import Layout from "../../components/layout";
+import Date from "../../components/date";
+import Meta from "../../components/meta";
+import Markdown from "../../components/markdown";
+import BuyMeACoffee from "../../components/buyMeACoffee";
 
-import utilStyles from '../../styles/utils.module.scss';
+import utilStyles from "../../styles/utils.module.scss";
 
 export default function Post({ post }) {
   const { title, description, content, publishedAt, slug, image } = post;
@@ -53,6 +53,6 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: 'blocking',
+    fallback: "blocking",
   };
 };
