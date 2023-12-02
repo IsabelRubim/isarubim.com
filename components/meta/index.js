@@ -1,6 +1,11 @@
 import Head from "next/head";
 
-const Meta = ({ title, description, canonical, image }) => (
+const Meta = ({
+  title,
+  description,
+  canonical,
+  image = "/images/profile.jpg",
+}) => (
   <Head>
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -19,21 +24,12 @@ const Meta = ({ title, description, canonical, image }) => (
     <meta name="twitter:description" content={description} />
     <meta name="twitter:site" content="@belrubim" />
     <meta name="twitter:creator" content="@belrubim" />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:secure_url" content={image} />
+    <meta property="twitter:image" content={image} />
     <link rel="icon" type="image/png" href="/bee.png" />
     <link rel="apple-touch-icon" href="/bee.png" />
-    {image ? (
-      <>
-        <meta property="og:image" content={image} />
-        <meta property="og:image:secure_url" content={image} />
-        <meta property="twitter:image" content={image} />
-      </>
-    ) : (
-      <>
-        <meta property="og:image" content="/images/profile.jpg" />
-        <meta property="og:image:secure_url" content="/images/profile.jpg" />
-        <meta name="twitter:image" content="/images/profile.jpg" />
-      </>
-    )}
+
     {canonical && <link rel="canonical" href={canonical} />}
   </Head>
 );
