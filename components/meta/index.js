@@ -24,16 +24,13 @@ const Meta = ({ title, description, canonical, image }) => (
       <>
         <meta property="og:image" content={image} />
         <meta property="og:image:secure_url" content={image} />
-        <meta name="twitter:image:src" content={image} />
+        <meta property="twitter:image" content={image} />
       </>
     ) : (
       <>
-        <meta property="og:image" content="/public/images/profile.jpg" />
-        <meta
-          property="og:image:secure_url"
-          content="/public/images/profile.jpg"
-        />
-        <meta name="twitter:image:src" content="/public/images/profile.jpg" />
+        <meta property="og:image" content="/images/profile.jpg" />
+        <meta property="og:image:secure_url" content="/images/profile.jpg" />
+        <meta name="twitter:image" content="/images/profile.jpg" />
       </>
     )}
     {canonical && <link rel="canonical" href={canonical} />}
