@@ -4,9 +4,9 @@ import { getSinglePost, getAllPublished } from "../../lib/notion";
 
 import Layout from "../../components/layout";
 import Date from "../../components/date";
-import Meta from "../../components/meta";
 import Markdown from "../../components/markdown";
 import Comments from "../../components/comments";
+import Header from "../../components/header";
 
 import utilStyles from "../../styles/utils.module.scss";
 
@@ -14,13 +14,12 @@ export default function Post({ post }) {
   const { title, description, content, publishedAt, slug, image } = post;
 
   return (
-    <Layout>
-      <Meta
-        title={title}
-        description={description}
-        image={image}
-        canonical={`https://isarubim.com/posts/${slug}`}
-      />
+    <Layout
+      image={image}
+      description={description}
+      canonical={`https://isarubim.com/posts/${slug}`}
+    >
+      <Header />
       <Head>
         <title>{title}</title>
       </Head>

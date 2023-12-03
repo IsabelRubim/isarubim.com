@@ -5,50 +5,23 @@ import styles from "./style.module.scss";
 import utilStyles from "../../styles/utils.module.scss";
 import ThemeChanger from "../themeChanger";
 import Meta from "../meta";
-import { name, description, siteTitle } from "../../utils";
+import { name, description as intro, siteTitle } from "../../utils";
 
-export default function Layout({ children, home }) {
+export default function Layout({
+  children,
+  description = intro,
+  canonical = "https://isarubim.com",
+  image = "/images/profile.jpg",
+}) {
   return (
     <div className={styles.container}>
       <ThemeChanger />
       <Meta
         title={siteTitle}
         description={description}
-        canonical="https://isarubim.com"
+        canonical={canonical}
+        image={image}
       />
-      <header className={styles.header}>
-        {home ? (
-          <>
-            <Image
-              priority
-              src="/images/profile.jpg"
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
-              alt={name}
-            />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
-          </>
-        ) : (
-          <>
-            <Link href="/">
-              <Image
-                priority
-                src="/images/profile.jpg"
-                className={utilStyles.borderCircle}
-                height={108}
-                width={108}
-                alt={name}
-              />
-            </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/" className={utilStyles.colorInherit}>
-                {name}
-              </Link>
-            </h2>
-          </>
-        )}
-      </header>
       <section className={styles.wrapper}>
         <main>{children}</main>
         <footer className={styles.creator}>

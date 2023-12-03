@@ -1,28 +1,30 @@
-import Head from 'next/head';
+import Head from "next/head";
 
-import Layout from '../components/layout';
-import Date from '../components/date';
-import RandomColor from '../components/randomColor';
+import Layout from "../components/layout";
+import Date from "../components/date";
+import RandomColor from "../components/randomColor";
+import Header from "../components/header";
 
-import * as gtag from '../lib/gtag';
-import { getAllPublished } from '../lib/notion';
+import * as gtag from "../lib/gtag";
+import { getAllPublished } from "../lib/notion";
 
-import { SOCIALS, siteTitle, description } from '../utils';
+import { SOCIALS, siteTitle, description } from "../utils";
 
-import utilStyles from '../styles/utils.module.scss';
+import utilStyles from "../styles/utils.module.scss";
 
 export default function Home({ posts }) {
   const goToSocial = ({ label, link }) => {
     gtag.event({
-      action: 'go_to_social',
-      category: 'social media',
+      action: "go_to_social",
+      category: "social media",
       label,
       value: link,
     });
   };
 
   return (
-    <Layout home>
+    <Layout>
+      <Header home />
       <Head>
         <title>{siteTitle}</title>
       </Head>
