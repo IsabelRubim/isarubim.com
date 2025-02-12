@@ -1,14 +1,15 @@
 import Head from "next/head";
 
-import { getSinglePost, getAllPublished } from "../../lib/notion";
+import { getSinglePost, getAllPublished } from "../../../lib/notion";
 
-import Layout from "../../components/layout";
-import Date from "../../components/date";
-import Markdown from "../../components/markdown";
-import Comments from "../../components/comments";
-import Header from "../../components/header";
+import Layout from "../../../components/layout";
+import Date from "../../../components/date";
+import Markdown from "../../../components/markdown";
+import Comments from "../../../components/comments";
+import Header from "../../../components/header";
 
-import utilStyles from "../../styles/utils.module.scss";
+import utilStyles from "../../../styles/utils.module.scss";
+import { siteTitle } from "../../../utils";
 
 export default function Post({ post }) {
   const { title, description, content, publishedAt, slug, image } = post;
@@ -17,11 +18,11 @@ export default function Post({ post }) {
     <Layout
       image={image}
       description={description}
-      canonical={`https://isarubim.com/posts/${slug}`}
+      canonical={`https://isarubim.com/blog/posts/${slug}`}
     >
       <Header />
       <Head>
-        <title>{title}</title>
+        <title>{siteTitle} - {title}</title>
       </Head>
       <article>
         <h1 className={utilStyles.title}>{title}</h1>

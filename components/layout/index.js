@@ -1,11 +1,7 @@
-import Image from "next/image";
-import Link from "next/link";
-
 import styles from "./style.module.scss";
-import utilStyles from "../../styles/utils.module.scss";
 import ThemeChanger from "../themeChanger";
 import Meta from "../meta";
-import { name, description as intro, siteTitle } from "../../utils";
+import { description as intro, siteTitle } from "../../utils";
 
 export default function Layout({
   children,

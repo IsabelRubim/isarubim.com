@@ -5,6 +5,7 @@ import dracula from "react-syntax-highlighter/dist/cjs/styles/prism/dracula";
 
 import styles from "./style.module.scss";
 import BuyMeACoffee from "../buyMeACoffee";
+import BackButton from "../back-button";
 
 const renderers = {
   code: ({ node, inline, className, children, ...props }) => {
@@ -35,9 +36,7 @@ export default function Markdown({ content }) {
 
       <BuyMeACoffee />
 
-      <div className={styles.backToHome}>
-        <Link href="/">← Voltar</Link>
-      </div>
+      <BackButton />
     </>
   );
 }
