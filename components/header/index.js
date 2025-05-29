@@ -1,44 +1,39 @@
-import Image from "next/image";
-import Link from "next/link";
+import LinkColor from '../link-color';
 
-import styles from "./style.module.scss";
-import utilStyles from "../../styles/utils.module.scss";
+import { description, goToLinks, LINKS, siteTitle } from '../../utils';
 
-import { description, goToLinks, LINKS, siteTitle } from "../../utils";
-import RandomColor from "../randomColor";
+import styles from './style.module.scss';
+import utilStyles from '../../styles/utils.module.scss';
 
 export default function Header() {
   return (
     <header className={styles.header}>
-      <Link href="/">
-        <Image
-          priority
-          src="/images/profile.jpg"
-          className={utilStyles.borderCircle}
-          height={108}
-          width={108}
-          alt={siteTitle}
-        />
-      </Link>
-      <h2 className={utilStyles.headingLg}>
-        <Link href="/" className={utilStyles.colorInherit}>
-          {siteTitle}
-        </Link>
+      <h2 className={`${utilStyles.headingLg} ${utilStyles.myName}`}>
+        {siteTitle}
       </h2>
       <section className={`${utilStyles.headingMd} ${utilStyles.social}`}>
         {LINKS.map(({ id, label, linkExternal, link }) => (
-          <RandomColor
+          <LinkColor
             key={id}
             label={label}
             link={link}
             linkExternal={linkExternal}
-            onClick={() => goToLinks({ category: "blog", label, link })}
+            onClick={() => goToLinks({ category: 'header', label, link })}
           />
         ))}
       </section>
 
       <section className={utilStyles.headingMd}>
         <p>{description}</p>
+      </section>
+
+      <section className={`${utilStyles.headingMd} ${styles.contactMe}`}>
+        You can get in touch with me via{' '}
+        <LinkColor
+          label='LinkedIn'
+          link='https://www.linkedin.com/in/isabelrubim/'
+          linkExternal={true}
+        />
       </section>
     </header>
   );

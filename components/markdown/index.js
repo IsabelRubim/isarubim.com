@@ -1,23 +1,22 @@
-import Link from "next/link";
-import ReactMarkdown from "react-markdown";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import dracula from "react-syntax-highlighter/dist/cjs/styles/prism/dracula";
+import Link from 'next/link';
+import ReactMarkdown from 'react-markdown';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import dracula from 'react-syntax-highlighter/dist/cjs/styles/prism/dracula';
 
-import styles from "./style.module.scss";
-import BuyMeACoffee from "../buyMeACoffee";
-import BackButton from "../back-button";
+import styles from './style.module.scss';
+import BuyMeACoffee from '../buyMeACoffee';
 
 const renderers = {
   code: ({ node, inline, className, children, ...props }) => {
-    const match = /language-(\w+)/.exec(className || "");
+    const match = /language-(\w+)/.exec(className || '');
     return !inline && match ? (
       <SyntaxHighlighter
         style={dracula}
         language={match[1]}
-        PreTag="div"
+        PreTag='div'
         {...props}
       >
-        {String(children).replace(/\n$/, "")}
+        {String(children).replace(/\n$/, '')}
       </SyntaxHighlighter>
     ) : (
       <code className={className} {...props}>
@@ -35,8 +34,6 @@ export default function Markdown({ content }) {
       </div>
 
       <BuyMeACoffee />
-
-      <BackButton />
     </>
   );
 }
