@@ -26,15 +26,6 @@ export default function Header() {
       <section className={utilStyles.headingMd}>
         <p>{description}</p>
       </section>
-
-      <section className={`${utilStyles.headingMd} ${styles.contactMe}`}>
-        You can get in touch with me via{' '}
-        <LinkColor
-          label='LinkedIn'
-          link='https://www.linkedin.com/in/isabelrubim/'
-          linkExternal={true}
-        />
-      </section>
     </header>
   );
 }
