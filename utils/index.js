@@ -27,3 +27,39 @@ export const goToLinks = ({ category, label, link }) => {
     value: link,
   });
 };
+
+export const PROJECTS_DETAILS = {
+  'web3-todo-monorepo': {
+    label: 'Web3 To-Do',
+    image: '/projects/web3-todo.png',
+    languages: ['TypeScript', 'Solidity'],
+    libraries: [
+      'React',
+      'RainbowKit',
+      'Wagmi',
+      'Ethers.js',
+      'Apollo Server/Client',
+      'TailwindCSS',
+    ],
+    fullStack: ['Front-end', 'Back-end'],
+    tools: ['Hardhat', 'Vite', 'pnpm'],
+  },
+};
+
+export const getStringWithSeparator = (string, limit, separator = '[...]') => {
+  if (!string) return;
+
+  let finalString = string;
+  const halfLimit = Math.floor((limit - separator.length) / 2);
+
+  if (finalString.length > limit) {
+    const initialString = string.substring(0, halfLimit);
+    const endString = string.substring(
+      string.length - halfLimit,
+      string.length
+    );
+    finalString = initialString + separator + endString;
+  }
+
+  return finalString;
+};

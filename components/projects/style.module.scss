@@ -1,0 +1,140 @@
+.projectsSection {
+  margin: 3rem 0;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--color-purple);
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.projectCard {
+  border-radius: 6px;
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 2px;
+  border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+  box-shadow: var(--shadow-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-dark);
+  }
+}
+
+.projectImage {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+}
+
+.projectContent {
+  padding: 1.5rem;
+}
+
+.projectTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-purple);
+  text-transform: capitalize;
+}
+
+.projectDescription {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.stackContainer {
+  margin-bottom: 1.5rem;
+}
+
+.stackTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-purple);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stackTags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.stackTag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-purple);
+  background-color: rgba(170, 46, 230, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  border: 1px solid rgba(170, 46, 230, 0.2);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: rgba(170, 46, 230, 0.2);
+    transform: translateY(-1px);
+  }
+}
+
+.fullStack {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.projectLinks {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  a {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 768px) {
+  .projectsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .projectCard {
+    margin: 0 auto;
+    max-width: 400px;
+  }
+
+  .projectContent {
+    padding: 1.25rem;
+  }
+
+  .projectLinks {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
