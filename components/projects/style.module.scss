@@ -17,12 +17,28 @@
 
 .projectCard {
   border-radius: 6px;
-  border: 10px solid;
-  border-image-slice: 1;
-  border-width: 2px;
-  border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
   box-shadow: var(--shadow-light);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to left, #743ad5, #d53a9d);
+    border-radius: 6px;
+    padding: 2px;
+    z-index: -1;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+  }
 
   &:hover {
     transform: translateY(-8px);
@@ -97,6 +113,40 @@
   &:hover {
     background-color: rgba(170, 46, 230, 0.2);
     transform: translateY(-1px);
+  }
+}
+
+.stackTitleClickable {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--color-primary);
+  }
+}
+
+.accordionIcon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+
+  &.expanded {
+    transform: rotate(180deg);
+  }
+}
+
+.stackContent {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.expanded {
+    max-height: 500px; /* Adjust based on your content */
   }
 }
 

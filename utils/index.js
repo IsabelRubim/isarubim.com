@@ -1,6 +1,7 @@
-export const description = `I'm a Senior Software Engineer with over 5 years of experience building scalable, high-impact web applications. 
-  I specialize in React, Next.js, JavaScript, TypeScript, and Node.js, with strong skills in front-end architecture, performance 
-  optimization, and UX-focused development.`;
+export const description = `I am a Senior Software Engineer with more than 5 years of experience 
+developing scalable and impactful web applications. I specialize in React, Next.js, JavaScript, 
+TypeScript, and Node.js, alongside various tools in this ecosystem. I possess strong skills in 
+front-end architecture, performance optimization, and UX-focused development.`;
 
 export const siteTitle = 'Isabel Rubim';
 

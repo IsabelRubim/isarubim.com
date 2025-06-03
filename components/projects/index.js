@@ -10,6 +10,7 @@ import styles from './style.module.scss';
 const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [expandedStacks, setExpandedStacks] = useState({});
 
   const selectedRepos = ['web3-todo-monorepo'];
 
@@ -47,6 +48,13 @@ const Projects = () => {
     return PROJECTS_DETAILS[projectName] || {};
   };
 
+  const toggleStackAccordion = (projectId) => {
+    setExpandedStacks((prev) => ({
+      ...prev,
+      [projectId]: !prev[projectId],
+    }));
+  };
+
   return (
     <section className={styles.projectsSection}>
       <h2 className={utilStyles.headingLg}>☄️ Projects</h2>
@@ -82,50 +90,80 @@ const Projects = () => {
               </p>
 
               <div className={styles.stackContainer}>
-                <h4 className={styles.stackTitle}>Stack:</h4>
-                <div className={styles.stackTags}>
-                  {getProjectsDetails(project.name)?.languages ? (
-                    <>
-                      <strong>Languages:</strong>
-                      {getProjectsDetails(project.name).languages.map(
-                        (language, idx) => (
-                          <span key={idx} className={styles.stackTag}>
-                            {language}
-                          </span>
-                        )
-                      )}
-                    </>
-                  ) : null}
+                <h4
+                  className={`${styles.stackTitle} ${styles.stackTitleClickable}`}
+                  onClick={() => toggleStackAccordion(project.id)}
+                >
+                  Stack
+                  <span
+                    className={`${styles.accordionIcon} ${
+                      expandedStacks[project.id] ? styles.expanded : ''
+                    }`}
+                  >
+                    ⌄
+                  </span>
+                </h4>
+
+                <div
+                  className={`${styles.stackContent} ${
+                    expandedStacks[project.id] ? styles.expanded : ''
+                  }`}
+                >
+                  <div className={styles.stackTags}>
+                    {getProjectsDetails(project.name)?.languages ? (
+                      <>
+                        <strong>Languages:</strong>
+                        {getProjectsDetails(project.name).languages.map(
+                          (language, idx) => (
+                            <span key={idx} className={styles.stackTag}>
+                              {language}
+                            </span>
+                          )
+                        )}
+                      </>
+                    ) : null}
+                  </div>
                 </div>
 
-                <div className={styles.stackTags}>
-                  {getProjectsDetails(project.name)?.libraries ? (
-                    <>
-                      <strong>Libraries:</strong>
-                      {getProjectsDetails(project.name).libraries.map(
-                        (library, idx) => (
-                          <span key={idx} className={styles.stackTag}>
-                            {library}
-                          </span>
-                        )
-                      )}
-                    </>
-                  ) : null}
+                <div
+                  className={`${styles.stackContent} ${
+                    expandedStacks[project.id] ? styles.expanded : ''
+                  }`}
+                >
+                  <div className={styles.stackTags}>
+                    {getProjectsDetails(project.name)?.libraries ? (
+                      <>
+                        <strong>Libraries:</strong>
+                        {getProjectsDetails(project.name).libraries.map(
+                          (library, idx) => (
+                            <span key={idx} className={styles.stackTag}>
+                              {library}
+                            </span>
+                          )
+                        )}
+                      </>
+                    ) : null}
+                  </div>
                 </div>
-
-                <div className={styles.stackTags}>
-                  {getProjectsDetails(project.name)?.tools ? (
-                    <>
-                      <strong>Tools:</strong>
-                      {getProjectsDetails(project.name).tools.map(
-                        (stack, idx) => (
-                          <span key={idx} className={styles.stackTag}>
-                            {stack}
-                          </span>
-                        )
-                      )}
-                    </>
-                  ) : null}
+                <div
+                  className={`${styles.stackContent} ${
+                    expandedStacks[project.id] ? styles.expanded : ''
+                  }`}
+                >
+                  <div className={styles.stackTags}>
+                    {getProjectsDetails(project.name)?.tools ? (
+                      <>
+                        <strong>Tools:</strong>
+                        {getProjectsDetails(project.name).tools.map(
+                          (stack, idx) => (
+                            <span key={idx} className={styles.stackTag}>
+                              {stack}
+                            </span>
+                          )
+                        )}
+                      </>
+                    ) : null}
+                  </div>
                 </div>
               </div>
 
